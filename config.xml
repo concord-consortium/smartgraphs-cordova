@@ -16,6 +16,12 @@
 
     <content src="index.html" />
 
+    <!-- plugins -->
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
+    <!-- /plugins -->
+
     <preference name="permissions"                value="none"/>
 
     <preference name="orientation"                value="landscape" />        <!-- all: default means both landscape and portrait are enabled -->
@@ -32,6 +38,10 @@
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
     <preference name="android-minSdkVersion"      value="7" />             <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+
+    <!-- StatusBar Plugin -->
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#ECECEC" />
 
     <icon src="res/icon.png" />
 

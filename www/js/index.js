@@ -26,6 +26,8 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        StatusBar.styleDefault();
+        StatusBar.backgroundColorByHexString("#ECECEC");
         window.location = "http://smartgraphs-authoring.concord.org/activities/225-african-lions-modeling-populations/student_preview";
     }
 };
