@@ -16,16 +16,58 @@
 // on each developer's box.
 
 var filestocopy = [{
-    "res/screens/ios/screen-ipad-landscape-2x.png":
+    "res/icons/ios/icon-40.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-40.png"
+}, {
+    "res/icons/ios/icon-40@2x.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-40@2x.png"
+},  {
+    "res/icons/ios/icon-40.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-50.png"
+}, {
+    "res/icons/ios/icon-40@2x.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-50@2x.png"
+}, {
+    "res/icons/ios/icon-60.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-60.png"
+}, {
+    "res/icons/ios/icon-60@2x.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-60@2x.png"
+}, {
+    "res/icons/ios/icon-60.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-72.png"
+}, {
+    "res/icons/ios/icon-60@2x.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-72@2x.png"
+}, {
+    "res/icons/ios/icon-76.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-76.png"
+}, {
+    "res/icons/ios/icon-76@2x.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-76@2x.png"
+}, {
+    "res/icons/ios/icon-small.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-small.png"
+}, {
+    "res/icons/ios/icon-small@2x.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-small@2x.png"
+}, {
+    "res/icons/ios/icon.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon.png"
+}, {
+    "res/icons/ios/icon@2x.png":
+    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon@2x.png"
+}, {
+    "res/screens/ios/Default-Landscape@2x~ipad.png":
     "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/splash/Default-Landscape@2x~ipad.png"
 }, {
-    "res/screens/ios/screen-ipad-landscape-2x.png":
+    "res/screens/ios/Default-Landscape~ipad.png":
     "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/splash/Default-Landscape~ipad.png"
 }, {
-    "res/screens/ios/screen-iphone-landscape-2x.png":
+    "res/screens/ios/Default~iphone.png":
     "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/splash/Default~iphone.png"
 }, {
-    "res/screens/ios/screen-iphone-landscape-2x.png":
+    "res/screens/ios/Default@2x~iphone.png":
     "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/splash/Default@2x~iphone.png"
 }];
 
@@ -40,9 +82,9 @@ filestocopy.forEach(function(obj) {
         var val = obj[key];
         var srcfile = path.join(rootdir, key);
         var destfile = path.join(rootdir, val);
-        console.log("copying "+srcfile+" to "+destfile);
         var destdir = path.dirname(destfile);
         if (fs.existsSync(srcfile) && fs.existsSync(destdir)) {
+            console.log("copying "+srcfile+" to "+destfile);
             fs.createReadStream(srcfile).pipe(
                fs.createWriteStream(destfile));
         }

@@ -43,7 +43,5 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#ECECEC" />
 
-    <icon src="res/icon.png" />
-
     <access origin="*" />
 </widget>
