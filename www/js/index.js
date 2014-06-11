@@ -28,6 +28,5 @@ var app = {
     onDeviceReady: function() {
         StatusBar.styleDefault();
         StatusBar.backgroundColorByHexString("#ECECEC");
-        window.location = "http://smartgraphs-authoring.concord.org/activities/225-african-lions-modeling-populations/student_preview";
     }
 };
