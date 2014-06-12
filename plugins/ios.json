@@ -9,10 +9,6 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"GAPlugin\"><param name=\"ios-package\" value=\"GAPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"StatusBar\"><param name=\"ios-package\" onload=\"true\" value=\"CDVStatusBar\" /></feature>",
                             "count": 1
                         },
@@ -23,12 +19,28 @@
                         {
                             "xml": "<preference name=\"StatusBarBackgroundColor\" value=\"#000000\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"GAPlugin\"><param name=\"ios-package\" value=\"GAPlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
             },
             "framework": {
                 "parents": {
+                    "libsqlite3.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "libz.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
                     "CoreData.framework": [
                         {
                             "xml": "false",
@@ -46,10 +58,10 @@
         }
     },
     "installed_plugins": {
-        "com.adobe.plugins.GAPlugin": {
+        "org.apache.cordova.statusbar": {
             "PACKAGE_NAME": "org.concord.smartgraphs-sam"
         },
-        "org.apache.cordova.statusbar": {
+        "com.adobe.plugins.GAPlugin": {
             "PACKAGE_NAME": "org.concord.smartgraphs-sam"
         }
     },
