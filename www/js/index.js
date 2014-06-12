@@ -32,7 +32,7 @@ var app = {
         // Here we create a new object which will clobber the Google Analytics
         // array, _gaq, with our plugin wrapper, so that all calls to _gaq.push
         // will use the plugin code instead.
-        window._gaq = new GAPluginWrapper("UA-12345678-1")
+        window._gaq = new GAPluginWrapper("UA-6899787-41")
     }
 };
 

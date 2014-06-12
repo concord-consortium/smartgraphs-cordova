@@ -6,12 +6,20 @@ module.exports = [
         "clobbers": [
             "window.StatusBar"
         ]
+    },
+    {
+        "file": "plugins/com.adobe.plugins.GAPlugin/www/GAPlugin.js",
+        "id": "com.adobe.plugins.GAPlugin.GAPlugin",
+        "clobbers": [
+            "GAPlugin"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "org.apache.cordova.statusbar": "0.1.3"
+    "org.apache.cordova.statusbar": "0.1.3",
+    "com.adobe.plugins.GAPlugin": "2.3.1"
 }
 // BOTTOM OF METADATA
 });

@@ -21,6 +21,9 @@
     </feature>
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
+    <feature name="GAPlugin">
+        <param name="ios-package" value="GAPlugin" />
+    </feature>
     <name>SmartGraphs (sams fork)</name>
     <description>
         Graphing activities to explore science and math topics
