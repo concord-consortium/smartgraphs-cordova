@@ -78,3 +78,23 @@ Build the app using
     cordova build
 
 open it in Xcode and click Run to load it onto an iPad or an emulator.
+
+
+Notes
+=====
+
+* If you find the status bar is not working on your built project, remove and re-add the statusbar plugin:
+
+        cordova plugin remove org.apache.cordova.statusbar
+        cordova plugin add org.apache.cordova.statusbar
+
+* If you switch from a project branch back to master, you will lose your built files. You will also be left
+with a non-empty but non-functioning platforms/ios folder.
+
+        rm -rf platforms/ios
+
+    you may also need to re-add your plugins:
+
+        cordova plugin remove org.apache.cordova.statusbar
+        cordova plugin add org.apache.cordova.statusbar
+        cordova plugin add https://github.com/phonegap-build/GAPlugin.git
