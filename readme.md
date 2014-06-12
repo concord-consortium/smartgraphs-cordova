@@ -48,7 +48,11 @@ Run the python script to make all absolute urls starting with "/static" be relat
     cd path/to/smartgraphs-cordova
     python -c 'import sgutils; sgutils.makeRelativeUrls()'
 
-Insert the following cordova-specific blocks in index.html (copied from Cordova's generated index.html file):
+You can update the HTML template with the latest SmartGraphs build:
+
+    python -c 'import sgutils; sgutils.copyHtmlTemplate("cfb1ca9612cdaa7efde804c77be1d423b41f0991")'
+
+Or manually nsert the following cordova-specific blocks in index.html (copied from Cordova's generated index.html file):
 
 Before the first `<meta>` tag:
 
