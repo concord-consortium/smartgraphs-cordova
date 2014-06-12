@@ -45,7 +45,7 @@ def cacheImage(url,i):
        extension = ".error"
    filename = "%s.%s"%(i,extension.lower())
    urllib.urlretrieve(url,os.path.join(cacheDir,filename))
-   newUrl = "/images/%s"%(filename)
+   newUrl = "images/%s"%(filename)
    return newUrl
 
 def replaceActivityImages():
