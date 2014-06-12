@@ -41,21 +41,11 @@ var GAPluginWrapper = function(trackingId) {
     this.gaPlugin.init(null, null, trackingId, 10);
 }
 
-function successHandler()
-{
-    console.log("success!");
-}
-
-function errorHandler()
-{
-    console.log("failed...");
-}
-
 // The only event SmartGraphs sends is in the form
 // _gaq.push(["_trackEvent", "SmartGraphs Activities", key, value]);
 GAPluginWrapper.prototype.push = function(arr) {
     var key   = arr[2],
         value = arr[3];
-    console.log("GA trying")
-    this.gaPlugin.trackEvent(successHandler, errorHandler, "Event", key, value);
+
+    this.gaPlugin.trackEvent(null, null, "Event", key, value);
 }

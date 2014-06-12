@@ -18,7 +18,7 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "org.apache.cordova.statusbar": "0.1.3",
+    "org.apache.cordova.statusbar": "0.1.6",
     "com.adobe.plugins.GAPlugin": "2.3.1"
 }
 // BOTTOM OF METADATA
