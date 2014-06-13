@@ -37,7 +37,7 @@ def cacheImage(url,i):
    cacheDir = os.path.join('www','images')
    if not os.path.exists(cacheDir):
        os.makedirs(cacheDir)
-   regex = re.compile('[^\.]\.(gif|jpg|png)', re.IGNORECASE)
+   regex = re.compile('[^\.]\.(gif|jpg|png|svg)', re.IGNORECASE)
    match = regex.search(url)
    if match:
        extension = match.group(match.lastindex)
@@ -50,7 +50,7 @@ def cacheImage(url,i):
 
 def replaceActivityImages():
     # http://rubular.com/r/9MUmX39uZB
-    image_regex = "(https?:\/\/[^'\"]+\.(?:gif|jpg|png))"
+    image_regex = "(https?:\/\/[^'\"]+\.(?:gif|jpg|png|svg))"
     regex = re.compile(image_regex,re.IGNORECASE | re.MULTILINE)
     image_count = 0
     for root, subs, files in os.walk("./www/static/smartgraphs"):
