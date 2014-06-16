@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:cdv = "http://cordova.apache.org/ns/1.0"
-        id        = "org.concord.smartgraphs-sam"
+        id        = "org.concord.smartgraphs.lions"
         version   = "0.0.1">
 
-    <name>SmartGraphs (sams fork)</name>
+    <name>African Lions</name>
 
     <description>
         Graphing activities to explore science and math topics

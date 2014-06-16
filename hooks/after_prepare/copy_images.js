@@ -17,58 +17,58 @@
 
 var filestocopy = [{
     "res/icons/ios/icon-40.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-40.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon-40.png"
 }, {
     "res/icons/ios/icon-40@2x.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-40@2x.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon-40@2x.png"
 },  {
     "res/icons/ios/icon-40.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-50.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon-50.png"
 }, {
     "res/icons/ios/icon-40@2x.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-50@2x.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon-50@2x.png"
 }, {
     "res/icons/ios/icon-60.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-60.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon-60.png"
 }, {
     "res/icons/ios/icon-60@2x.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-60@2x.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon-60@2x.png"
 }, {
     "res/icons/ios/icon-60.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-72.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon-72.png"
 }, {
     "res/icons/ios/icon-60@2x.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-72@2x.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon-72@2x.png"
 }, {
     "res/icons/ios/icon-76.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-76.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon-76.png"
 }, {
     "res/icons/ios/icon-76@2x.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-76@2x.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon-76@2x.png"
 }, {
     "res/icons/ios/icon-small.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-small.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon-small.png"
 }, {
     "res/icons/ios/icon-small@2x.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon-small@2x.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon-small@2x.png"
 }, {
     "res/icons/ios/icon.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon.png"
 }, {
     "res/icons/ios/icon@2x.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/icons/icon@2x.png"
+    "platforms/ios/African\ Lions/Resources/icons/icon@2x.png"
 }, {
     "res/screens/ios/Default-Landscape@2x~ipad.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/splash/Default-Landscape@2x~ipad.png"
+    "platforms/ios/African\ Lions/Resources/splash/Default-Landscape@2x~ipad.png"
 }, {
     "res/screens/ios/Default-Landscape~ipad.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/splash/Default-Landscape~ipad.png"
+    "platforms/ios/African\ Lions/Resources/splash/Default-Landscape~ipad.png"
 }, {
     "res/screens/ios/Default~iphone.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/splash/Default~iphone.png"
+    "platforms/ios/African\ Lions/Resources/splash/Default~iphone.png"
 }, {
     "res/screens/ios/Default@2x~iphone.png":
-    "platforms/ios/SmartGraphs\ (sams\ fork)/Resources/splash/Default@2x~iphone.png"
+    "platforms/ios/African\ Lions/Resources/splash/Default@2x~iphone.png"
 }];
 
 var fs = require('fs');
