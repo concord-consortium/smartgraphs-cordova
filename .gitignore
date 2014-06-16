@@ -1,2 +1,6 @@
 .DS_Store
 *.pyc
+platforms/ios/African Lions.xcodeproj/project.xcworkspace/xcuserdata
+platforms/ios/African Lions.xcodeproj/xcuserdata
+platforms/ios/CordovaLib/CordovaLib.xcodeproj/xcuserdata
+platforms/ios/DerivedData
