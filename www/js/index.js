@@ -44,9 +44,9 @@ var app = {
             $("a").each(function() {
                 var href = $(this).attr("href");
                 $(this).click(function() {
-                    window.open(href,'_system')
+                    window.open(href,'_blank')
                 });
-                $(this).attr("href", "");
+                $(this).attr("href", "#");
             })
         });
 
