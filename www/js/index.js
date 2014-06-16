@@ -21,6 +21,7 @@ var app = {
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
+
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
@@ -33,6 +34,26 @@ var app = {
         // array, _gaq, with our plugin wrapper, so that all calls to _gaq.push
         // will use the plugin code instead.
         window._gaq = new GAPluginWrapper("UA-6899787-41")
+        app.replaceLinks();
+    },
+
+    replaceLinks: function() {
+        MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+        // fired when a mutation occurs
+        var observer = new MutationObserver(function() {
+            $("a").each(function() {
+                var href = $(this).attr("href");
+                $(this).click(function() {
+                    window.open(href,'_system')
+                });
+                $(this).attr("href", "");
+            })
+        });
+
+        observer.observe(document, {
+          subtree: true,
+          childList: true
+        });
     }
 };
 
