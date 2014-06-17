@@ -40,5 +40,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#ECECEC" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="8000" />
     <access origin="*" />
 </widget>
