@@ -15,7 +15,9 @@
 // we don't build for all platforms
 // on each developer's box.
 
-var filestocopy = [{
+var filestocopy = [
+// iOS icons
+{
     "res/icons/ios/icon-40.png":
     "platforms/ios/African\ Lions/Resources/icons/icon-40.png"
 }, {
@@ -57,7 +59,9 @@ var filestocopy = [{
 }, {
     "res/icons/ios/icon@2x.png":
     "platforms/ios/African\ Lions/Resources/icons/icon@2x.png"
-}, {
+},
+// iOS splash screens
+{
     "res/screens/ios/Default-Landscape@2x~ipad.png":
     "platforms/ios/African\ Lions/Resources/splash/Default-Landscape@2x~ipad.png"
 }, {
@@ -69,7 +73,36 @@ var filestocopy = [{
 }, {
     "res/screens/ios/Default@2x~iphone.png":
     "platforms/ios/African\ Lions/Resources/splash/Default@2x~iphone.png"
-}];
+},
+// Android icons
+{
+    "res/icons/android/icon-48-mdpi.png":
+    "platforms/android/res/drawable/icon.png"
+}, {
+    "res/icons/android/icon-48-mdpi.png":
+    "platforms/android/res/drawable-mdpi/icon.png"
+}, {
+    "res/icons/android/icon-72-hdpi.png":
+    "platforms/android/res/drawable-hdpi/icon.png"
+}, {
+    "res/icons/android/icon-96-xhdpi.png":
+    "platforms/android/res/drawable-xhdpi/icon.png"
+}, {
+    "res/icons/android/icon-144-xhdpi.png":
+    "platforms/android/res/drawable-xxhdpi/icon.png"
+},
+// Android splash screens
+ {
+    "res/screens/android/splash-mdpi.png":
+    "platforms/android/res/drawable-land-mdpi/screen.png"
+}, {
+    "res/screens/android/splash-hdpi.png":
+    "platforms/android/res/drawable-land-hdpi/screen.png"
+}, {
+    "res/screens/android/splash-xhdpi.png":
+    "platforms/android/res/drawable-land-xhdpi/screen.png"
+}
+];
 
 var fs = require('fs');
 var path = require('path');
