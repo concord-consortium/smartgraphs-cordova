@@ -46,11 +46,7 @@ var app = {
                 var span = $("<span class='pseudolink'>");
                 span.html($(this).html());
                 span.bind('touchstart', function() {
-                    var ref = window.open(href,'_blank');
-                    ref.addEventListener('loaderror', function(event) {
-                        alert('error: ' + event.message);
-                        ref.close();
-                    });
+                    var ref = window.open(href,'_system');
                 });
                 $(this).replaceWith(span);
             });
