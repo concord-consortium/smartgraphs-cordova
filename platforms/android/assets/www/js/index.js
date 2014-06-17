@@ -43,11 +43,17 @@ var app = {
         var observer = new MutationObserver(function() {
             $("a").each(function() {
                 var href = $(this).attr("href");
-                $(this).click(function() {
-                    window.open(href,'_system')
+                var span = $("<span class='pseudolink'>");
+                span.html($(this).html());
+                span.bind('touchstart', function() {
+                    var ref = window.open(href,'_blank');
+                    ref.addEventListener('loaderror', function(event) {
+                        alert('error: ' + event.message);
+                        ref.close();
+                    });
                 });
-                $(this).attr("href", "");
-            })
+                $(this).replaceWith(span);
+            });
         });
 
         observer.observe(document, {
