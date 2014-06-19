@@ -1,0 +1,14 @@
+{
+  "name": "smartgraphs-cordova",
+  "version": "0.0.1",
+
+  "devDependencies": {
+    "shelljs": "*",
+    "xcode": "0.6.2",
+    "xml2js": "*"
+  },
+
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
