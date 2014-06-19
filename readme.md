@@ -26,7 +26,7 @@ Building African Lions app:
         cordova platform add ios
         cordova platform add android
 
-3. Install the plugin
+3. Install the plugins
 
         ./install_plugins.sh
 
@@ -43,18 +43,18 @@ Building African Lions app:
         cordova build ios
         cordova build android
 
-    When you build the app, besides the standard Cordova build process the scripts in hooks/ are
-    also run. Currently these are
+    When you add the platforms and build the apps, besides the standard Cordova build process the
+    scripts in hooks/ are also run. Currently these are
 
-    ### after_prepare:
-
-    * copies all icons and splashscreens to the correct locations
-
-    ### after_build:
+    ### after_platform-add:
 
     * Sets landscape orientation on Android by modifying the AndroidManifest
     * Sets landscape orientation on iPhones and iPads by modifying the plist
     * Set deployment target (iPad, iOS 7.1) by modifying the pbxproj file
+
+    ### after_prepare:
+
+    * copies all icons and splashscreens to the correct locations
 
 
 
