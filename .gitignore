@@ -2,3 +2,4 @@
 *.pyc
 platforms/
 plugins/
+node_modules/
