@@ -1,32 +1,86 @@
 SmartGraphs Cordova Project
 ===========================
 
-To build and run for iOS:
+To setup Cordova:
 
     sudo npm install -g cordova
     sudo npm install -g ios-sim
 
-    cd path/to/smartgraphs-cordova
-    cordova platform add ios
-    cordova build
-    cordova emulate ios
+    npm install
 
-Note that some features are not actually read from the config.xml file by Cordova, and must
-be set manually, either by modifying the built plist file, or by opening the project up in
-Xcode and modifying the project there.
+Setting up Android Developer Environment
+========================================
 
-Currently, the following steps need to be taken after the project is built:
-
-1. Set landscape orientation on iPhones and iPads using Xcode
-2. Set deployment target (iPad, iOS 7.1) using Xcode
-
-These settings should be preserved after re-building, but may not always be.
-
-To load the app onto a registered iPad, open it in Xcode, select the iPad as the target, and click Run.
+<http://cordova.apache.org/docs/en/3.5.0/guide_platforms_android_index.md.html>
 
 
-Building a SmartGraphs project and serving it locally
-=====================================================
+Building African Lions app:
+===========================
+
+1. Switch to the African Lions branch
+
+        git checkout african-lions
+
+2. Add the iOS and Android platforms in Cordova
+
+        cordova platform add ios
+        cordova platform add android
+
+3. Install the plugin
+
+        ./install_plugins.sh
+
+    note that this step will generally need to be repeated if you modify your plugins or
+    blow away the built products, which is why that script includes the uninstall commands
+    first before installing.
+
+4. Build the app
+
+        cordova build
+
+    or, optionally
+
+        cordova build ios
+        cordova build android
+
+    When you build the app, besides the standard Cordova build process the scripts in hooks/ are
+    also run. Currently these are
+
+    ### after_prepare:
+
+    * copies all icons and splashscreens to the correct locations
+
+    ### after_build:
+
+    * Sets landscape orientation on Android by modifying the AndroidManifest
+    * Sets landscape orientation on iPhones and iPads by modifying the plist
+    * Set deployment target (iPad, iOS 7.1) by modifying the pbxproj file
+
+
+
+Testing and deploying the app
+=============================
+
+iOS
+---
+
+1. Open the file platforms/ios/African Lions.xcodeproj in Xcode.
+
+2. Select either an emulator or a physical device from the pulldown menu at the top left
+
+3. Click the Play button to send the app to the device.
+
+
+Android
+-------
+
+1. After building for Android, plug in a device (one that allows external installation) and run
+
+        cordova run android
+
+
+Building a SmartGraphs project and adding it to the app
+=======================================================
 
 The following assumes that the [Smartgraphs project](https://github.com/concord-consortium/Smartgraphs)
 is already checked out and is buildable:
@@ -80,27 +134,3 @@ After the opening `<body>` tag:
 Build the app using
 
     cordova build
-
-open it in Xcode and click Run to load it onto an iPad or an emulator.
-
-
-Notes
-=====
-
-* If you find the status bar is not working on your built project, particularly if you switch from master back
-to a project branch  (and so have lost your built files), you may need to rebuild the project. This has do be done
-in an annoyingly exact order, or the plugins may not be added correctly.
-
-        rm -rf platforms/ios
-        cordova platform add ios
-
-        cordova plugin remove org.apache.cordova.statusbar
-        cordova plugin add org.apache.cordova.statusbar
-
-        cordova plugin remove com.adobe.plugins.GAPlugin
-        cordova plugin add https://github.com/phonegap-build/GAPlugin.git#GA-3.0
-
-        cordova plugin remove org.apache.cordova.inappbrowser
-        cordova plugin add org.apache.cordova.inappbrowser
-
-        cordova build
