@@ -79,6 +79,24 @@ Android
         cordova run android
 
 
+Building the android APK file for distribution:
+===============================================
+
+To build the App for distribution you need to sign it.
+This example creates a key "mykey" in ./default.keystore and uses to
+sign the final APK.
+
+1. keytool -genkey -v -keystore ./default.keystore
+
+2. Add the key information in platforms/android/ant.properties:
+
+    ```
+    key.store=/Users/npaessel/lab/javascript/sg-cordova/noah-test-key.keystore
+    key.alias=mykey
+    ```
+3. Run the build: `cordova build andoid --release`
+
+
 Building a SmartGraphs project and adding it to the app
 =======================================================
 
