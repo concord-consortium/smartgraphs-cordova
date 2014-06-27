@@ -64,11 +64,33 @@ Testing and deploying the app
 iOS
 ---
 
+1. Bump the version and / or build number in config.xml
+
+1. cordova build ios
+
+1. After building the app run `./remove_unused_regions.py`
+
 1. Open the file platforms/ios/African Lions.xcodeproj in Xcode.
 
-2. Select either an emulator or a physical device from the pulldown menu at the top left
+1. Remove unused language resources in the project browser in Resources/*.lproj
 
-3. Click the Play button to send the app to the device.
+1. Select either an emulator or a physical device from the pulldown menu at the top left
+
+1. Click the Play button to send the app to the device.
+
+1. To create an IPA for TestFlight or the iTunes store:
+  
+    1. Make sure your IOS Device is connected, and chosen in the devlice pulldown at the top left.
+
+    1. Select menu → "Product" → "Archive".
+
+    1. The first item on the archives screen displayed next is the most recent archive.
+
+    1. Click on "Distribute". 
+
+    1. For Test Flight, select "Save for Enterprise and Ad Hock Deployment" – sign with the Concord Provisioning profile.
+
+    1. For the "iOS App Store" Use the "CC Apple Store Distrobution 2014" profile.
 
 
 Android
