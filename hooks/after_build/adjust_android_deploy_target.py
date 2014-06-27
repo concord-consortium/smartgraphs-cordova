@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+minSdkVersion = "19"
 
 import sys
 import os
@@ -16,4 +17,4 @@ if os.path.exists(projectPath):
       print ("Setting Android deploy target on " + file);
       regex = re.compile("android:minSdkVersion=\".*?\"")
       for line in fileinput.input(filepath, inplace = True):
-        print regex.sub("android:minSdkVersion=\"16\"", line),
+        print regex.sub("android:minSdkVersion=\""+minSdkVersion+"\"", line),

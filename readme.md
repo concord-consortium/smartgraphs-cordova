@@ -78,6 +78,11 @@ Android
 
         cordova run android
 
+    Note that this will re-build the project without the after_build hooks, for some bizarre reason.
+    To load the app on the device with the after_build hooks intact (device orientation fix, etc),
+    build the project (`cordova build android`), open the project in the Eclipse SDK, and run using
+    the run button.
+
 
 Building the android APK file for distribution:
 ===============================================
