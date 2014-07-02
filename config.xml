@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:cdv = "http://cordova.apache.org/ns/1.0"
-        id        = "org.concord.smartgraphs.lions"
-        version   = "1.0.1">
+        id        = "org.concord.smartgraphs.algebra"
+        version   = "0.0.01">
 
-    <name>African Lions</name>
+    <name>Algebra Activities</name>
 
     <description>
         Graphing activities to explore science and math topics
@@ -45,6 +45,7 @@
 
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="8000" />
+    <preference name="SplashScreenDelay" value="800" />
 
     <access origin="*" />
 </widget>
