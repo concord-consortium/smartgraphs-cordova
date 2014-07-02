@@ -136,9 +136,11 @@ Build SG
 
     cd path/to/Smartgraphs
     rm -rf tmp
-    sc-build
+    bundle exec sc-build smartgraphs -r --languages=en`
 
-Copy the /tmp/build/static folder to smartgraphs-cordova/www/static
+    # copy the sproutcore files into the cordova app:
+    cp -r $SG_RUNTIME/tmp/build/static $SG_CORDOVA/www/static
+
 
 Move the file www/static/smartgraphs/en/[id]/indev.html to www/index.html
 
