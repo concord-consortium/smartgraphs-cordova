@@ -14,7 +14,7 @@
         The Concord Consortium Team
     </author>
 
-    <content src="index.html" />
+    <content src="menu/2.html" />
 
     <!-- plugins -->
     <feature name="StatusBar">
