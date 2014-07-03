@@ -132,6 +132,10 @@ is already checked out and is buildable:
 
 Remove all activities but the one(s) you want to deploy from Smartgraphs/apps/smartgraphs/activity_json.
 
+(Optional -- if you have html file in www/menu/source.html that points to SmartGraphs activites on the
+SmartGraphs authoring server, you can run `./download_activities.py`, which will create new files in
+Smartgraphs/apps/smartgraphs/activity_json/*.js for you)
+
 Build SG
 
     cd path/to/Smartgraphs
