@@ -36,7 +36,7 @@ footer, header, hgroup, menu, nav, section {
 }
 html, body { height: 100%; }
 body {
-  background: #75a643;
+  background: #fff;
 	font: 80% arial, helvetica, sans-serif;
 	line-height: 1;
 }
@@ -78,10 +78,9 @@ li, p { font-size: 1em; }
 	clear: both;
 	font-size: 2rem;
 	height: auto;
-	min-height: 172px;
+	min-height: 192px;
 	list-style: none;
 	margin: 0;
-	opacity: .9;
 	position: relative;
     width: 100%;
 	}
@@ -91,31 +90,34 @@ li, p { font-size: 1em; }
 	height: auto;
 	min-height: 100px;
 	}
-#categories li:hover {
-	opacity: 1;
-	}
 li#linear-equations-link {
-	background: #04788c url(linear-equations.gif) 20px 55px no-repeat;
+	background: #04788c url(linear-equations.gif) 20px 65px no-repeat;
 	}
 li#quadratic-equations-link {
-	background: #f7ab1b url(quadratic-equations.gif) 15px 55px no-repeat;
+	background: #f7ab1b url(quadratic-equations.gif) 15px 65px no-repeat;
 	}
 li#transformations-functions-link {
-	background: #e16a3e url(transformation-functions.gif) 15px 55px no-repeat;
+	background: #e16a3e url(transformation-functions.gif) 15px 65px no-repeat;
 	}
 li#exponential-functions-link {
-	background: #75a643 url(exponential-functions.gif) 30px 55px no-repeat;
+	background: #75a643 url(exponential-functions.gif) 20px 65px no-repeat;
 	}
 	#cat-links a {
 		color: #fff;
 		display: block;
 		height: auto;
-		min-height: 98px;
-		padding: 74px 0 0 120px;
+		min-height: 108px;
+		padding: 84px 0 0 120px;
 		text-decoration: none;
 		width: 100%;
 		}
-	#cat-links li li a { color: #fff; display: block; min-height: 82px; padding: 48px 20px 0 0; }
+	#cat-links li li a {
+	  color: #fff;
+	  display: block;
+	  font-weight: strong;
+	  min-height: 82px;
+	  padding: 48px 20px 0 0;
+	  }
 #categories ul.activities {
 	clear: both;
 	display: none;
@@ -183,50 +185,50 @@ li#exponential-functions-link {
 
 <div id="activity-cats">
   <ul id="cat-links">
-    <li id="linear-equations-link"><a href="#linear-equations" onclick="showActivities('linear-equations'); return false;">Linear Equations</a>
+    <li id="linear-equations-link"><a href="#linear-equations" onclick="toggleActivities('linear-equations'); return false;">Linear Equations</a>
 <ul class="activities" id="linear-equations">
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/189-ski-slope/student_preview" title="Linear Equations: Ski Slope"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/ski-slope.jpg" alt="Linear Equations: Ski Slope" />Linear Equations: Ski Slope</a></strong></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/189-ski-slope/student_preview" title="Linear Equations: Ski Slope"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/ski-slope.jpg" alt="Linear Equations: Ski Slope" />Linear Equations: Ski Slope</a></li>
 
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/195-y-mx-b/student_preview" title="y=mx+b"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/ymxb.jpg" alt="y=mx+b" />y=mx+b</a></strong></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/195-y-mx-b/student_preview" title="y=mx+b"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/ymxb.jpg" alt="y=mx+b" />y=mx+b</a></li>
 
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/199-points-intercepts-and-slopes-oh-my/student_preview" title="Linear Equations: Points, Intercepts, and Slopes, Oh My!"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/points.jpg" alt="Linear Equations: Points, Intercepts, and Slopes, Oh My!" />Linear Equations: Points, Intercepts, and Slopes, Oh My!</a></strong></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/199-points-intercepts-and-slopes-oh-my/student_preview" title="Linear Equations: Points, Intercepts, and Slopes, Oh My!"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/points.jpg" alt="Linear Equations: Points, Intercepts, and Slopes, Oh My!" />Linear Equations: Points, Intercepts, and Slopes, Oh My!</a></li>
 
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/223-linear-word-problems/student_preview" title="Linear Equations Word Problems"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/linear-word-problems.jpg" alt="Linear Equations Word Problems" />Linear Equations Word Problems</a></strong></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/223-linear-word-problems/student_preview" title="Linear Equations Word Problems"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/linear-word-problems.jpg" alt="Linear Equations Word Problems" />Linear Equations Word Problems</a></li>
 
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/231-solving-systems-of-equations-by-graphing/student_preview" title="Solving Systems of Linear Equations by Graphing"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/solving-systems.jpg" alt="Solving Systems of Linear Equations by Graphing" />Solving Systems of Linear Equations by Graphing</a></strong></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/231-solving-systems-of-equations-by-graphing/student_preview" title="Solving Systems of Linear Equations by Graphing"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/solving-systems.jpg" alt="Solving Systems of Linear Equations by Graphing" />Solving Systems of Linear Equations by Graphing</a></li>
 
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/240-systems-of-equations-word-problems-part/student_preview" title="Systems of Linear Equations Word Problems Part 1"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/solving-equations-p1.jpg" alt="Systems of Linear Equations Word Problems Part 1" />Systems of Linear Equations Word Problems Part 1</a></strong></li> 
+<li><a href="http://smartgraphs-authoring.concord.org/activities/240-systems-of-equations-word-problems-part/student_preview" title="Systems of Linear Equations Word Problems Part 1"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/solving-equations-p1.jpg" alt="Systems of Linear Equations Word Problems Part 1" />Systems of Linear Equations Word Problems Part 1</a></li> 
 
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/246-systems-of-equations-word-problems-part/student_preview" title="Systems of Linear Equations Word Problems Part 2"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/solving-equations-p2.jpg" alt="Systems of Linear Equations Word Problems Part 2" />Systems of Linear Equations Word Problems Part 2</a></strong></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/246-systems-of-equations-word-problems-part/student_preview " title="Systems of Linear Equations Word Problems Part 2"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/solving-equations-p2.jpg" alt="Systems of Linear Equations Word Problems Part 2" />Systems of Linear Equations Word Problems Part 2</a></li>
 
 </ul>    
     </li>
-    <li id="quadratic-equations-link"><a href="#quadratic-equations" onclick="showActivities('quadratic-equations'); return false;">Quadratic Equations</a>
+    <li id="quadratic-equations-link"><a href="#quadratic-equations" onclick="toggleActivities('quadratic-equations'); return false;">Quadratic Equations</a>
 <ul class="activities" id="quadratic-equations">
 
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/253-graphing-quadratic-equations/student_preview" title="Graphing Quadratic Equations"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/graphing-quadratic-equations.jpg" alt="Graphing Quadratic Equations" />Graphing Quadratic Equations</a></strong></li>
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/289-quadratic-word-problems-part-1/student_preview" title="Quadratic Word Problems Part 1"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/quadratic-word-problems1.jpg" alt="Quadratic Word Problems Part 1" />Quadratic Word Problems Part 1</a></strong></li>
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/292-quadratic-word-problems-part-2/student_preview" title="Quadratic Word Problems Part 2"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/quadratic-word-problems2.jpg" alt="Quadratic Word Problems Part 2" />Quadratic Word Problems Part 2</a></strong></li>
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/297-quadratic-functions-in-vertex-form/student_preview" title="Quadratic Functions in Vertex Form"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/quadratic-vertex.jpg" alt="Quadratic Functions in Vertex Form" />Quadratic Functions in Vertex Form</a></strong></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/253-graphing-quadratic-equations/student_preview" title="Graphing Quadratic Equations"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/graphing-quadratic-equations.jpg" alt="Graphing Quadratic Equations" />Graphing Quadratic Equations</a></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/289-quadratic-word-problems-part-1/student_preview" title="Quadratic Word Problems Part 1"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/quadratic-word-problems1.jpg" alt="Quadratic Word Problems Part 1" />Quadratic Word Problems Part 1</a></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/292-quadratic-word-problems-part-2/student_preview" title="Quadratic Word Problems Part 2"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/quadratic-word-problems2.jpg" alt="Quadratic Word Problems Part 2" />Quadratic Word Problems Part 2</a></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/297-quadratic-functions-in-vertex-form/student_preview" title="Quadratic Functions in Vertex Form"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/quadratic-vertex.jpg" alt="Quadratic Functions in Vertex Form" />Quadratic Functions in Vertex Form</a></li>
 </ul>    
     </li>
-    <li id="transformations-functions-link"><a href="#transformations-functions" onclick="showActivities('transformations-functions'); return false;">Transformation of Functions</a>
+    <li id="transformations-functions-link"><a href="#transformations-functions" onclick="toggleActivities('transformations-functions'); return false;">Transformation of Functions</a>
 <ul class="activities" id="transformations-functions">
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/301-transformations-of-functions-1-translations/student_preview " title="Transformations of Functions 1: Translations"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/translations.jpg" alt="Transformations of Functions 1: Translations" />Transformations of Functions 1: Translations</a></strong></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/301-transformations-of-functions-1-translations/student_preview " title="Transformations of Functions 1: Translations"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/translations.jpg" alt="Transformations of Functions 1: Translations" />Transformations of Functions 1: Translations</a></li>
 
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/302-transformations-of-functions-2-dilations/student_preview" title="Transformations of Functions 2: Dilations"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/dilations.jpg" alt="Transformations of Functions 2: Dilations" />Transformations of Functions 2: Dilations</a></strong></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/302-transformations-of-functions-2-dilations/student_preview" title="Transformations of Functions 2: Dilations"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/dilations.jpg" alt="Transformations of Functions 2: Dilations" />Transformations of Functions 2: Dilations</a></li>
 
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/304-transformations-of-functions-3-reflections/student_preview" title="Transformations of Functions 3: Reflections"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/transformations-functions-3.jpg" alt="Transformations of Functions 3: Reflections" />Transformations of Functions 3: Reflections</a></strong></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/304-transformations-of-functions-3-reflections/student_preview" title="Transformations of Functions 3: Reflections"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/transformations-functions-3.jpg" alt="Transformations of Functions 3: Reflections" />Transformations of Functions 3: Reflections</a></li>
 
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/307-transformations-of-functions-4-all-transformations/student_preview" title="Transformations of Functions 4: All Transformations"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/transformations-functions-4.jpg" alt="Transformations of Functions 4: All Transformations" />Transformations of Functions 4: All Transformations</a></strong></li>
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/332-inverses-of-functions/student_preview" title="Inverses of Functions"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/inverses-functions.jpg" alt="Inverses of Functions" />Inverses of Functions</a></strong></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/307-transformations-of-functions-4-all-transformations/student_preview" title="Transformations of Functions 4: All Transformations"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/transformations-functions-4.jpg" alt="Transformations of Functions 4: All Transformations" />Transformations of Functions 4: All Transformations</a></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/332-inverses-of-functions/student_preview" title="Inverses of Functions"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/inverses-functions.jpg" alt="Inverses of Functions" />Inverses of Functions</a></li>
 </ul>    
     </li>
-    <li id="exponential-functions-link"><a href="#exponential-functions" onclick="showActivities('exponential-functions'); return false;">Exponential Functions</a>
+    <li id="exponential-functions-link"><a href="#exponential-functions" onclick="toggleActivities('exponential-functions'); return false;">Exponential Functions</a>
 <ul class="activities" id="exponential-functions">
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/315-graphing-exponential-equations/student_preview" title="Graphing Exponential Equations"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/graphing-exp-equations.jpg" alt="Graphing Exponential Equations" />Graphing Exponential Equations</a></strong></li>
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/316-exponential-growth/student_preview" title="Exponential Growth"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/exp-growth.jpg" alt="Exponential Growth" />Exponential Growth</a></strong></li>
-<li><strong><a href="http://smartgraphs-authoring.concord.org/activities/331-exponential-decay/student_preview" title="Exponential Decay"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/exp-decay.jpg" alt="Exponential Decay" />Exponential Decay</a></strong></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/315-graphing-exponential-equations/student_preview" title="Graphing Exponential Equations"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/graphing-exp-equations.jpg" alt="Graphing Exponential Equations" />Graphing Exponential Equations</a></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/316-exponential-growth/student_preview" title="Exponential Growth"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/exp-growth.jpg" alt="Exponential Growth" />Exponential Growth</a></li>
+<li><a href="http://smartgraphs-authoring.concord.org/activities/331-exponential-decay/student_preview" title="Exponential Decay"><img src="http://concord.org/sites/default/files/images/projects/smartgraphs/exp-decay.jpg" alt="Exponential Decay" />Exponential Decay</a></li>
 </ul>    
     </li>
   </ul>
@@ -241,14 +243,14 @@ var categories = [
                   'transformations-functions', 
                   'exponential-functions'
                  ];
-function showActivities(cat) {
+function toggleActivities(cat) {
   for ( var i = 0; i <= categories.length; i++) {
     if (categories[i] != cat) {
       $('#' + categories[i]).hide('blind', 200);	
     }
   }
   $('#' + cat).toggle('blind', '500', function(){
-    $('html,body').animate({scrollTop: $(this).offset().top - 172}, 300);
+    $('html,body').animate({scrollTop: $(this).offset().top - 192}, 300);
   });
 }
 </script>
