@@ -1,6 +1,7 @@
 .DS_Store
 *.pyc
 platforms/
+smartgraphs
 plugins/
 node_modules/
 *.keystore
