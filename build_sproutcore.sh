@@ -4,6 +4,7 @@
 rvm ruby-1.9.3
 
 rm -rf ./smartgraphs/apps/smartgraphs/activity_json/*.js
+rm -rf ./www/images
 ./download_activities.py
 cd smartgraphs
 rm -rf ./tmp
