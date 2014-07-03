@@ -6,7 +6,7 @@ import urllib
 
 """
 usage ./download_activities.python
-Assumes: a file named www/menu/source.html  (menu_in_file)
+Assumes: a file named www/menu/index.source_html  (menu_in_file)
 Assumes: a smartgraphs project directory in ./smartgraphs
 Changes: 
   * Will remove *.js files from ./smartgraphs/apps/smartgraphs/activity_json
@@ -22,7 +22,7 @@ projectRoot = os.getcwd()
 
 sgRoot = os.path.join(projectRoot, "smartgraphs", "apps", "smartgraphs")
 sgActivityRoot = os.path.join(sgRoot, "activity_json")
-menu_in_file = os.path.join(projectRoot, "www", "menu", "source.html")
+menu_in_file = os.path.join(projectRoot, "www", "menu", "index.source_html")
 menu_out_file = os.path.join(projectRoot, "www", "menu", "index.html")
 json_outdir = sgActivityRoot
 url_regex = "(https?://smartgraphs-authoring.concord.org/activities/[^\"]+)"
@@ -39,11 +39,11 @@ if os.path.exists(menu_in_file):
     urls = regex.findall(menu_source_html)
     hashUrls = {}
     for url in urls:
-        act_name = re.sub("[0-9]+-","",url.split("/")[-2])
+        act_name = url.split("/")[-2]
         act_name = "/shared/%s" % (act_name)
-        json_url = "%s.json" %(url)
+        json_url = "%s.json" %(url.strip()  )
         filename = "%s.js" %(json_url.split("/")[-2])
-        hashUrls[url] = "index.html#%s" % (act_name)
+        hashUrls[url] = "../index.html#%s" % (act_name)
         filename = os.path.join(sgActivityRoot,filename)
         print("downloading %s" % (json_url))
         print("to %s" % (filename))
