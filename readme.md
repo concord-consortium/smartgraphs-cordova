@@ -132,9 +132,12 @@ is already checked out and is buildable:
 
 Remove all activities but the one(s) you want to deploy from Smartgraphs/apps/smartgraphs/activity_json.
 
-(Optional -- if you have html file in www/menu/source.html that points to SmartGraphs activites on the
-SmartGraphs authoring server, you can run `./download_activities.py`, which will create new files in
-Smartgraphs/apps/smartgraphs/activity_json/*.js for you)
+(Optional -- if you have html file in www/menu/index.source_html that has links to SmartGraphs 
+activites on the SmartGraphs authoring server, you can run  `./download_activities.py`, 
+which will create new files in Smartgraphs/apps/smartgraphs/activity_json/*.js for you)
+
+(Optional -- you can try running `./build_sproutcore.sh` which will attempt to clean, build, 
+and copy SmartGraphs for you, assuming there is a symlink in `./smartgraphs` )
 
 Build SG
 
