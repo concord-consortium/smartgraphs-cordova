@@ -151,7 +151,7 @@ You can update the HTML template with the latest SmartGraphs build:
 
     python -c 'import sgutils; sgutils.copyHtmlTemplate("cfb1ca9612cdaa7efde804c77be1d423b41f0991")'
 
-Or manually nsert the following cordova-specific blocks in index.html (copied from Cordova's generated index.html file):
+Or manually insert the following cordova-specific blocks in index.html (copied from Cordova's generated index.html file):
 
 Before the first `<meta>` tag:
 
@@ -171,10 +171,12 @@ After the opening `<body>` tag:
     <script>
       window.location.hash = "/shared/african-lions-modeling-populations";
       window.showOutline = false; window.showEditButton = false;
+      // uncomment this next line if the app will use a home page
+      // window.showHomeButton = true; window.activityHome = '/index.html';
       String.preferredLanguage = "en";
     </script>
 
-(change location hash as appropriate.)
+(change location hash as appropriate, and set the showHomeButton and activityHome properties as appropriate.)
 
 Build the app using
 
