@@ -44,21 +44,25 @@ def cacheImage(url,i, path='www'):
    else:
        extension = ".error"
    filename = "%s.%s"%(i,extension.lower())
-   urllib.urlretrieve(url,os.path.join(cacheDir,filename))
+   filepath = os.path.join(cacheDir,filename)
+   print("caching image: %s to path %s" %(url,filepath))
+   urllib.urlretrieve(url, filepath)
    newUrl = "images/%s"%(filename)
    return newUrl
 
 def replaceActivityImages():
-  act_image_count = replaceRemoteImages("./www/static/smartgraphs")
+  act_image_count = replaceRemoteImages("./www/static/smartgraphs", imageBaseDir="./www")
   print("repalced %s activity images" % (act_image_count))
-  final_count = replaceRemoteImages("./www/menu",act_image_count)
+  final_count = replaceRemoteImages("./www/menu", act_image_count)
   menu_count = final_count - act_image_count
   print("repalced %s menu images" % (menu_count))
   print("repalced %s a total of images" % (final_count))
 
-def replaceRemoteImages(path,start_count=0):
+def replaceRemoteImages(path, start_count=0, imageBaseDir=None):
     # http://rubular.com/r/9MUmX39uZB
     image_count = start_count
+    if imageBaseDir is None:
+      imageBaseDir  = path
     image_regex = "(https?:\/\/[^'\"]+\.(?:gif|jpg|png|svg))"
     regex = re.compile(image_regex,re.IGNORECASE | re.MULTILINE)
     for root, subs, files in os.walk(path):
@@ -70,7 +74,7 @@ def replaceRemoteImages(path,start_count=0):
                 imageDict = dict.fromkeys(imageUrls)
                 for url in imageDict.iterkeys():
                     image_count = image_count + 1
-                    imageDict[url] = cacheImage(url,image_count, path)
+                    imageDict[url] = cacheImage(url,image_count, imageBaseDir)
                     data = data.replace(url,imageDict[url])
                 newfile = os.path.join(root,f)
                 with open(newfile,'w') as dest:
