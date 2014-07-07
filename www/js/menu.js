@@ -28,37 +28,14 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         StatusBar.styleDefault();
-        StatusBar.backgroundColorByHexString("#ECECEC");
+        StatusBar.backgroundColorByHexString("#04788c");
 
         // Here we create a new object which will clobber the Google Analytics
         // array, _gaq, with our plugin wrapper, so that all calls to _gaq.push
         // will use the plugin code instead.
-        window._gaq = new GAPluginWrapper("UA-6899787-41")
-        app.replaceLinks();
-    },
+        window._gaq = new GAPluginWrapper("UA-6899787-41");
 
-    replaceLinks: function() {
-        MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-        // fired when a mutation occurs
-        var observer = new MutationObserver(function() {
-            $("a").each(function() {
-                if ($(this).parents('#activity-cats').length > 0) { // exclude home menu items
-                    return;
-                }
-                var href = $(this).attr("href");
-                var span = $("<span class='pseudolink'>");
-                span.html($(this).html());
-                span.bind('touchstart', function() {
-                    var ref = window.open(href,'_system');
-                });
-                $(this).replaceWith(span);
-            });
-        });
-
-        observer.observe(document, {
-          subtree: true,
-          childList: true
-        });
+        _gaq.push(["_trackEvent", "SmartGraphs Activities", "Opened menu page", null]);
     }
 };
 
