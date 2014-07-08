@@ -132,6 +132,13 @@ is already checked out and is buildable:
 
 Remove all activities but the one(s) you want to deploy from Smartgraphs/apps/smartgraphs/activity_json.
 
+(Optional -- if you have html file in www/menu/index.source_html that has links to SmartGraphs 
+activites on the SmartGraphs authoring server, you can run  `./download_activities.py`, 
+which will create new files in Smartgraphs/apps/smartgraphs/activity_json/*.js for you)
+
+(Optional -- you can try running `./build_sproutcore.sh` which will attempt to clean, build, 
+and copy SmartGraphs for you, assuming there is a symlink in `./smartgraphs` )
+
 Build SG
 
     cd path/to/Smartgraphs
@@ -151,7 +158,7 @@ You can update the HTML template with the latest SmartGraphs build:
 
     python -c 'import sgutils; sgutils.copyHtmlTemplate("cfb1ca9612cdaa7efde804c77be1d423b41f0991")'
 
-Or manually nsert the following cordova-specific blocks in index.html (copied from Cordova's generated index.html file):
+Or manually insert the following cordova-specific blocks in index.html (copied from Cordova's generated index.html file):
 
 Before the first `<meta>` tag:
 
@@ -171,10 +178,12 @@ After the opening `<body>` tag:
     <script>
       window.location.hash = "/shared/african-lions-modeling-populations";
       window.showOutline = false; window.showEditButton = false;
+      // uncomment this next line if the app will use a home page
+      // window.showHomeButton = true; window.activityHome = '/index.html';
       String.preferredLanguage = "en";
     </script>
 
-(change location hash as appropriate.)
+(change location hash as appropriate, and set the showHomeButton and activityHome properties as appropriate.)
 
 Build the app using
 
