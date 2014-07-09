@@ -35,6 +35,7 @@ var app = {
         // will use the plugin code instead.
         window._gaq = new GAPluginWrapper("UA-6899787-41")
         app.replaceLinks();
+        app.addTextAreaFocusScroll();
     },
 
     replaceLinks: function() {
@@ -53,6 +54,28 @@ var app = {
                 });
                 $(this).replaceWith(span);
             });
+        });
+
+        observer.observe(document, {
+          subtree: true,
+          childList: true
+        });
+    },
+
+    addTextAreaFocusScroll: function() {
+        MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+        // fired when a mutation occurs
+        var observer = new MutationObserver(function() {
+            // if we're on an android device
+            if ($(".android").length > 0) {
+                $("textarea").unbind();
+                $("textarea").bind('focus keydown', function(){
+                    var el = this;
+                    setTimeout(function() {
+                        el.scrollIntoView();
+                    }, 500);
+                });
+            }
         });
 
         observer.observe(document, {
