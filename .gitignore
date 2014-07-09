@@ -1,5 +1,9 @@
 .DS_Store
 *.pyc
+www/static/
+www/images/
+www/index.html
+www/menu/images/
 platforms/
 smartgraphs
 plugins/
