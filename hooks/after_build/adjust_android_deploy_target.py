@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-minSdkVersion = "19"
+minSdkVersion = "16"
 
 import sys
 import os
