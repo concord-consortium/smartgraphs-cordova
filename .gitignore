@@ -8,4 +8,5 @@ platforms/
 smartgraphs
 plugins/
 node_modules/
+android-custom-files/ant.properties
 *.keystore
