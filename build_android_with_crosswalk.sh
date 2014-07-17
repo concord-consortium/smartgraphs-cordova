@@ -1,3 +1,7 @@
+#!/bin/bash
+
+./build_sproutcore.sh
+
 # This script re-builds the Cordova project with the CrossWalk WebView
 #
 # This expects you to have a built Crosswalk-Cordova folder in a sibling folder
@@ -38,5 +42,5 @@ ant debug
 cd ../..
 
 # To install on your device, delete the existing app then run
-# adb install platforms/android/bin/AfricanLions-debug.apk
+adb install -r platforms/android/bin/AfricanLions-debug.apk
 # note, this will just install the app, it won't automatically open it
