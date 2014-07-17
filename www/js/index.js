@@ -36,8 +36,12 @@ var app = {
         window._gaq = new GAPluginWrapper("UA-6899787-41");
         app.replaceLinks();
         app.addPageRelayoutListener();
-        document.addEventListener('hidekeyboard', app.onKeyboardHide, false);
-        document.addEventListener('showkeyboard', app.onKeyboardShow, false);
+        if ($(".android").length > 0) {
+            window.showLargeButtons = true;
+            window.showSpinner = true;
+            document.addEventListener('hidekeyboard', app.onKeyboardHide, false);
+            document.addEventListener('showkeyboard', app.onKeyboardShow, false);
+        }
     },
 
     onKeyboardShow: function() {
