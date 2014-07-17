@@ -43,12 +43,17 @@ var app = {
     },
 
     onKeyboardShow: function() {
+        if(Smartgraphs && Smartgraphs.activityViewController) {
+            Smartgraphs.activityViewController.onShowKeyboard();
+        }
         app.scrollTextIntoView();
         return true;
     },
 
     onKeyboardHide: function() {
-        console.log("onKeyboardShow");
+        if(Smartgraphs && Smartgraphs.activityViewController) {
+            Smartgraphs.activityViewController.onHideKeyboard();
+        }
          $("textarea").each(function(i,el) {
                 el.blur();
             });
