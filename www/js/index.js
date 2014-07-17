@@ -37,8 +37,6 @@ var app = {
         app.replaceLinks();
         app.addPageRelayoutListener();
         if ($(".android").length > 0) {
-            window.showLargeButtons = true;
-            window.showSpinner = true;
             document.addEventListener('hidekeyboard', app.onKeyboardHide, false);
             document.addEventListener('showkeyboard', app.onKeyboardShow, false);
         }
