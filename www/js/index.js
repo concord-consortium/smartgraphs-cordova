@@ -50,6 +50,10 @@ var app = {
     },
 
     onKeyboardHide: function() {
+        console.log("onKeyboardShow");
+         $("textarea").each(function(i,el) {
+                el.blur();
+            });
         return true;
     },
 
