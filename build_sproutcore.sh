@@ -17,5 +17,3 @@ SG_BUILD=`ls ./www/static/smartgraphs/en`
 echo "using build $SG_BUILD"
 python -c "import sgutils; sgutils.copyHtmlTemplate('$SG_BUILD')"
 python -c 'import sgutils; sgutils.makeRelativeUrls()'
-cordova build ios
-open ./platforms/ios/Algebra\ Activities.xcodeproj
