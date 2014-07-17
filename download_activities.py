@@ -29,7 +29,7 @@ sgActivityRoot = os.path.join(sgRoot, "activity_json")
 menu_in_file = os.path.join(projectRoot, "www", "menu", "index.source_html")
 menu_out_file = os.path.join(projectRoot, "www", "menu", "index.html")
 json_outdir = sgActivityRoot
-url_regex = "(https?://smartgraphs-authoring.concord.org/activities/[^\"]+)"
+url_regex = "(https?://smartgraphs-authoring.*concord.org/activities/[^\"]+)"
 
 if os.path.exists(menu_in_file):
     if not os.path.exists(json_outdir):
