@@ -36,10 +36,26 @@ var app = {
         window._gaq = new GAPluginWrapper("UA-6899787-41");
         app.replaceLinks();
         app.addPageRelayoutListener();
-        if ($(".android").length > 0) {
-            document.addEventListener('hidekeyboard', app.onKeyboardHide, false);
-            document.addEventListener('showkeyboard', app.onKeyboardShow, false);
-        }
+        app.createKeyboardListener();
+        document.addEventListener('hidekeyboard', app.onKeyboardHide, false);
+        document.addEventListener('showkeyboard', app.onKeyboardShow, false);
+    },
+
+    createKeyboardListener: function() {
+        this.oldHeight = 0;
+
+        window.onresize = function(event) {
+            var height = $(window).height();
+
+            if (app.oldHeight === 0) {
+                // ignore, this is the first event
+            } else if (height > app.oldHeight) {
+                cordova.fireDocumentEvent('hidekeyboard');
+            } else if (height < app.oldHeight) {
+                cordova.fireDocumentEvent('showkeyboard');
+            }
+            app.oldHeight = height;
+        };
     },
 
     onKeyboardShow: function() {
@@ -132,10 +148,12 @@ var app = {
         var observer = new MutationObserver(function() {
             var el = $(".sc-view.sc-static-layout").first(),
                 position = $(".sc-view.sc-static-layout").first().css("position");
-            // force relayout
-            el.css({position: "fixed"});
-            el[0].offsetTop;     // doing this forces the browser to recalculate the layout, so we don't need a timeout
-            el.css({position: position});
+            if (el.length) {
+                // force relayout
+                el.css({position: "fixed"});
+                el[0].offsetTop;     // doing this forces the browser to recalculate the layout, so we don't need a timeout
+                el.css({position: position});
+            }
         });
 
         observer.observe(document, {
