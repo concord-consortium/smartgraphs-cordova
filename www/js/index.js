@@ -37,8 +37,8 @@ var app = {
         app.replaceLinks();
         app.addPageRelayoutListener();
         app.createKeyboardListener();
-        document.addEventListener('hidekeyboard', app.onKeyboardHide, false);
-        document.addEventListener('showkeyboard', app.onKeyboardShow, false);
+        document.addEventListener('hidekeyboardJS', app.onKeyboardHide, false);
+        document.addEventListener('showkeyboardJS', app.onKeyboardShow, false);
     },
 
     createKeyboardListener: function() {
@@ -50,9 +50,9 @@ var app = {
             if (app.oldHeight === 0) {
                 // ignore, this is the first event
             } else if (height > app.oldHeight) {
-                cordova.fireDocumentEvent('hidekeyboard');
+                cordova.fireDocumentEvent('hidekeyboardJS');
             } else if (height < app.oldHeight) {
-                cordova.fireDocumentEvent('showkeyboard');
+                cordova.fireDocumentEvent('showkeyboardJS');
             }
             app.oldHeight = height;
         };
