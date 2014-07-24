@@ -39,6 +39,21 @@ body {
   line-height: 1;
   overflow-x: hidden;
 }
+#spinner {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255,0.6);
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+}
+#spinner img {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
 ol, ul {
   list-style: none;
 }
@@ -201,6 +216,9 @@ li#exponential-functions-link {
   </ul>
 </div>
 </div>
+<div id="spinner">
+  <img src="page_loading.png"></img>
+</div>
 <script src="jquery-1.11.1.min.js"></script>
 <script src="jquery-ui-1.11.0/jquery-ui.min.js"></script>
 <script>
@@ -224,6 +242,10 @@ function toggleActivities(cat) {
     $('html,body').animate({scrollTop: $(this).offset().top - 192}, 300);
   });
 }
+
+$(".activities a").on('click', function() {
+  $("#spinner").show();
+});
 </script>
 <script type="text/javascript" src="../cordova.js"></script>
 <script type="text/javascript" src="../js/menu.js"></script>
