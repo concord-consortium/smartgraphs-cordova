@@ -76,16 +76,20 @@ li, p { font-size: 1em; }
   min-height: 100px;
   }
 li#linear-equations-link {
-  background: #04788c url(linear-equations.gif) 20px 65px no-repeat;
+  background: #04788c url(linear-equations.gif) 20px 55px no-repeat;
+  background-size: 82px 82px;
   }
 li#quadratic-equations-link {
-  background: #f7ab1b url(quadratic-equations.gif) 15px 65px no-repeat;
+  background: #f7ab1b url(quadratic-equations.gif) 20px 55px no-repeat;
+  background-size: 82px 82px;
   }
 li#transformations-functions-link {
-  background: #e16a3e url(transformation-functions.gif) 15px 65px no-repeat;
+  background: #e16a3e url(transformation-functions.gif) 20px 55px no-repeat;
+  background-size: 82px 82px;
   }
 li#exponential-functions-link {
-  background: #75a643 url(exponential-functions.gif) 20px 65px no-repeat;
+  background: #75a643 url(exponential-functions.gif) 20px 55px no-repeat;
+  background-size: 82px 82px;
   }
   #cat-links a {
     color: #fff;
@@ -134,7 +138,7 @@ li#exponential-functions-link {
   clear: left;
   float: left;
   height: 82px;
-  margin: -25px 20px 10px 0;
+  margin: -25px 20px 10px 11px;
   width: 82px;
   }
 #activity-cats {
