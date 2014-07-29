@@ -70,9 +70,8 @@ var app = {
         if(Smartgraphs && Smartgraphs.activityViewController) {
             Smartgraphs.activityViewController.onHideKeyboard();
         }
-         $("textarea").each(function(i,el) {
-                el.blur();
-            });
+        $("textarea").blur();
+        $("input").blur();
         return true;
     },
 
