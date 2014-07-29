@@ -179,7 +179,7 @@ li#exponential-functions-link {
 <li><a href="http://smartgraphs-authoring.concord.org/activities/297-quadratic-functions-in-vertex-form/student_preview" title="Quadratic Functions in Vertex Form"><img src="http://staff.concord.org/~emcelroy/sg-app/menu/quadratic-functions-in-vertex-form.jpg" alt="Quadratic Functions in Vertex Form" />Quadratic Functions in Vertex Form</a></li>
 </ul>
     </li>
-    <li id="transformations-functions-link"><a href="#transformations-functions" onclick="toggleActivities('transformations-functions'); return false;">Transformation of Functions</a>
+    <li id="transformations-functions-link"><a href="#transformations-functions" onclick="toggleActivities('transformations-functions'); return false;">Transformations of Functions</a>
 <ul class="activities" id="transformations-functions">
 <li><a href="http://smartgraphs-authoring.concord.org/activities/301-transformations-of-functions-1-translations/student_preview " title="Transformations of Functions 1: Translations"><img src="http://staff.concord.org/~emcelroy/sg-app/menu/transformations-of-functions-1-translations.jpg" alt="Transformations of Functions 1: Translations" />Transformations of Functions 1: Translations</a></li>
 
