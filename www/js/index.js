@@ -130,35 +130,6 @@ var app = {
           subtree: true,
           childList: true
         });
-    },
-
-    // This is an annoying hack to force a relayout of the page when we switch pages.
-    // This is to fix a bug where, on a small screen, being at the bottom of the scroll
-    // on one page and then switching to the next page will layout the new page with
-    // some of the top of the left pane cut off.
-    addPageRelayoutListener: function() {
-        // only add this for smaller devices
-        if (screen.height > 600 && screen.width > 1000) {
-            return;
-        }
-
-        MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-        // fired when a mutation occurs
-        var observer = new MutationObserver(function() {
-            var el = $(".sc-view.sc-static-layout").first(),
-                position = $(".sc-view.sc-static-layout").first().css("position");
-            if (el.length) {
-                // force relayout
-                el.css({position: "fixed"});
-                el[0].offsetTop;     // doing this forces the browser to recalculate the layout, so we don't need a timeout
-                el.css({position: position});
-            }
-        });
-
-        observer.observe(document, {
-          subtree: true,
-          childList: true
-        });
     }
 };
 
