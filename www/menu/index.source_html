@@ -230,6 +230,29 @@ var categories = [
                   'exponential-functions'
                  ];
 
+// menu is designed for 768 height
+var height = $(window).height(),
+    scale  = height / 768,
+    medScale = (1 + scale) / 2;
+$('#categories li').css('min-height', 192 * scale);
+$('#categories li').css('font-size', (2 * medScale) + "rem");
+$('#categories li li').css('font-size', (1.25 * medScale) + "rem");
+$('#cat-links>li').css('background-position', (20 * scale) + "px " + (55 * scale) + "px");
+$('#cat-links>li').css('background-size', (82 * scale) + "px " + (82 * scale) + "px");
+$('#cat-links a').css('min-height', 108 * scale);
+$('#cat-links a').css('padding', (84 * scale) + "px 0 0 " + (120 * scale) + "px");
+$('#cat-links li li a').css('min-height', 82 * scale);
+$('#cat-links li li a').css('padding', (48 * scale) + "px " + (20 * scale) + "px 0 0");
+$('#categories ul.activities').css('min-height', 10 * scale);
+$('#categories ul.activities').css('padding', (40 * scale) + "px 0 0");
+$('#categories ul.activities li').css('min-height', 88 * scale);
+$('#categories ul.activities li img ').css({
+  height: 82 * scale,
+  width: 82 * scale,
+  margin: (-25 * scale) + "px " + (20 * scale) + "px " + (10 * scale) + "px " + (11 * scale) + "px"
+});
+$('#activity-cats').css('min-height', height);
+
 function toggleActivities(cat) {
   // close all menus that are not for the selected category
   for ( var i = 0; i <= categories.length; i++) {
@@ -239,7 +262,7 @@ function toggleActivities(cat) {
   }
   // show menu for selected category and autoscroll page to top of menu
   $('#' + cat).toggle('blind', '500', function(){
-    $('html,body').animate({scrollTop: $(this).offset().top - 192}, 300);
+    $('html,body').animate({scrollTop: $(this).offset().top - (192*scale)}, 300);
   });
 }
 
