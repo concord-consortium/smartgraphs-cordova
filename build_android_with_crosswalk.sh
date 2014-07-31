@@ -8,9 +8,9 @@
 # called crosswalk-cordova-6.35.131.12-arm. You can download the prebuilt zip
 # from https://crosswalk-project.org/#documentation/downloads
 #
-# To make a release build, change line 37 (the second ant debug) to ant release.
+# To make a release build, change line 42 (the second ant debug) to ant release.
 # You will need to manually sign the release apk, or have your keystore info in
-# android-custom-files/ant.properties
+# android-custom-files/ant.properties (uncomment line 30)
 
 
 # First do a basic fresh Cordova build
@@ -34,6 +34,7 @@ cp android-custom-files/custom_rules.xml platforms/android
 rm -Rf platforms/android/CordovaLib/*
 cp -a ../crosswalk-cordova-6.35.131.12-arm/framework/* platforms/android/CordovaLib/
 cp -a ../crosswalk-cordova-6.35.131.12-arm/VERSION platforms/android/
+
 cd platforms/android/CordovaLib/
 android update project --subprojects --path . --target "android-19"
 ant debug
@@ -41,6 +42,7 @@ cd ..
 ant debug
 cd ../..
 
+
 # To install on your device, delete the existing app then run
-adb install -r platforms/android/bin/AfricanLions-debug.apk
+# adb install -r platforms/android/bin/AfricanLions-debug.apk
 # note, this will just install the app, it won't automatically open it
