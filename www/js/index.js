@@ -36,10 +36,26 @@ var app = {
         window._gaq = new GAPluginWrapper("UA-6899787-41");
         app.replaceLinks();
         app.addPageRelayoutListener();
-        if ($(".android").length > 0) {
-            document.addEventListener('hidekeyboard', app.onKeyboardHide, false);
-            document.addEventListener('showkeyboard', app.onKeyboardShow, false);
-        }
+        app.createKeyboardListener();
+        document.addEventListener('hidekeyboardJS', app.onKeyboardHide, false);
+        document.addEventListener('showkeyboardJS', app.onKeyboardShow, false);
+    },
+
+    createKeyboardListener: function() {
+        this.oldHeight = 0;
+
+        window.onresize = function(event) {
+            var height = $(window).height();
+
+            if (app.oldHeight === 0) {
+                // ignore, this is the first event
+            } else if (height > app.oldHeight) {
+                cordova.fireDocumentEvent('hidekeyboardJS');
+            } else if (height < app.oldHeight) {
+                cordova.fireDocumentEvent('showkeyboardJS');
+            }
+            app.oldHeight = height;
+        };
     },
 
     onKeyboardShow: function() {
@@ -54,9 +70,8 @@ var app = {
         if(Smartgraphs && Smartgraphs.activityViewController) {
             Smartgraphs.activityViewController.onHideKeyboard();
         }
-         $("textarea").each(function(i,el) {
-                el.blur();
-            });
+        $("textarea").blur();
+        $("input").blur();
         return true;
     },
 
@@ -89,33 +104,6 @@ var app = {
     },
 
 
-
-    // This is an annoying hack to force a relayout of the page when we switch pages.
-    // This is to fix a bug where, on a small screen, being at the bottom of the scroll
-    // on one page and then switching to the next page will layout the new page with
-    // some of the top of the left pane cut off.
-    addPageRelayoutListener: function() {
-        // only add this for smaller devices
-        if (screen.height > 600 && screen.width > 1000) {
-            return;
-        }
-
-        MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-        // fired when a mutation occurs
-        var observer = new MutationObserver(function() {
-            var el = $(".sc-view.sc-static-layout").first(),
-                position = $(".sc-view.sc-static-layout").first().css("position");
-            // force relayout
-            el.css({position: "fixed"});
-            el[0].offsetTop;     // doing this forces the browser to recalculate the layout, so we don't need a timeout
-            el.css({position: position});
-        });
-
-        observer.observe(document, {
-          subtree: true,
-          childList: true
-        });
-    },
 
     // This is an annoying hack to force a relayout of the page when we switch pages.
     // This is to fix a bug where, on a small screen, being at the bottom of the scroll

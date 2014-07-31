@@ -5,6 +5,10 @@ www/images/
 www/index.html
 www/menu/images/
 platforms/
+www/index.html
+www/images
+www/menu/index.html
+www/menu/images
 smartgraphs
 plugins/
 node_modules/

@@ -26,9 +26,10 @@ def replace(source_file_path, pattern, substring):
     os.remove(source_file_path)
     move(target_file_path, source_file_path)
 
-def copyHtmlTemplate(sg_buildnumber=os.getenv('SG_BUILD_NUMBER', 'export_sg_buildnumber')):
+def copyHtmlTemplate(sg_buildnumber=os.getenv('SG_BUILD_NUMBER', 'export_sg_buildnumber'), isAndroid=False):
+    path = './www/index_template_android.html' if isAndroid else './www/index_template_ios.html'
     with codecs.open("./www/index.html", 'w', 'utf-8') as target_file:
-        with codecs.open("./www/index_template.html", 'r', 'utf-8') as source_file:
+        with codecs.open(path, 'r', 'utf-8') as source_file:
             for line in source_file:
                 target_file.write(line.replace('$SG_BUILD_NUMBER', sg_buildnumber))
 
