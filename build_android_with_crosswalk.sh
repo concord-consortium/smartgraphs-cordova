@@ -1,6 +1,13 @@
 #!/bin/bash
 
+# Build sproutcore and copy the file to /www
 ./build_sproutcore.sh
+
+# Copy the Android template, cache images, and make all urls relative
+SG_BUILD=`ls ./www/static/smartgraphs/en`
+echo "using build $SG_BUILD"
+python -c "import sgutils; sgutils.copyHtmlTemplate('$SG_BUILD', True)"
+python -c 'import sgutils; sgutils.makeRelativeUrls()'
 
 # This script re-builds the Cordova project with the CrossWalk WebView
 #
@@ -15,7 +22,7 @@
 
 # First do a basic fresh Cordova build
 # Some or all of this section can be commented-out if you haven't made changes to the project
-rm -Rf platforms/android
+rm -Rf platforms/*
 rm -Rf plugins/*
 cordova platform add android
 ./install_plugins.sh
