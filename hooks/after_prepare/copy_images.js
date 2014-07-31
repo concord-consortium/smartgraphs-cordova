@@ -109,6 +109,9 @@ var filestocopy = [
 }, {
     "res/screens/android/splash-xhdpi.png":
     "platforms/android/res/drawable-land-xhdpi/screen.png"
+}, {
+    "res/screens/android/splash-xxhdpi.png":
+    "platforms/android/res/drawable-land-xxhdpi/screen.png"
 }
 ];
 
