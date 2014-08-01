@@ -4,7 +4,7 @@
         id        = "org.concord.smartgraphs.algebra"
         version   = "0.0.01">
 
-    <name>Algebra Activities</name>
+    <name>Algebra</name>
 
     <description>
         Graphing activities to explore science and math topics

@@ -51,5 +51,5 @@ cd ../..
 
 
 # To install on your device, delete the existing app then run
-# adb install -r platforms/android/bin/AlgebraActivities-debug.apk
+# adb install -r platforms/android/bin/Algebra-debug.apk
 # note, this will just install the app, it won't automatically open it
