@@ -1,6 +1,13 @@
 #!/bin/bash
 
-# ./build_sproutcore.sh
+# Build sproutcore and copy the file to /www
+./build_sproutcore.sh
+
+# Copy the Android template, cache images, and make all urls relative
+SG_BUILD=`ls ./www/static/smartgraphs/en`
+echo "using build $SG_BUILD"
+python -c "import sgutils; sgutils.copyHtmlTemplate('$SG_BUILD', True)"
+python -c 'import sgutils; sgutils.makeRelativeUrls()'
 
 # This script re-builds the Cordova project with the CrossWalk WebView
 #
@@ -10,12 +17,12 @@
 #
 # To make a release build, change line 42 (the second ant debug) to ant release.
 # You will need to manually sign the release apk, or have your keystore info in
-# android-custom-files/ant.properties
+# android-custom-files/ant.properties (uncomment line 30)
 
 
 # First do a basic fresh Cordova build
 # Some or all of this section can be commented-out if you haven't made changes to the project
-rm -Rf platforms/android
+rm -Rf platforms/*
 rm -Rf plugins/*
 cordova platform add android
 ./install_plugins.sh
@@ -44,5 +51,5 @@ cd ../..
 
 
 # To install on your device, delete the existing app then run
-adb install -r platforms/android/bin/AlgebraActivities-debug.apk
+# adb install -r platforms/android/bin/AlgebraActivities-debug.apk
 # note, this will just install the app, it won't automatically open it
