@@ -16,7 +16,7 @@ import shutil
 
 projectRoot   = sys.argv[1]
 keepLangs     = ['en.lproj']
-resourceDir   = os.path.join(projectRoot, 'platforms', 'ios', 'African Lions', 'Resources')
+resourceDir   = os.path.join(projectRoot, 'Resources')
 globPattern   = os.path.join(resourceDir, "*.lproj")
 foundsome     = False
 
