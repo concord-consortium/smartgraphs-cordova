@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Build sproutcore and copy the file to /www
-./build_sproutcore.smartgraphs
+./build_sproutcore.sh
 
 # Copy the iOS template, cache images, and make all urls relative
 
