@@ -2,7 +2,6 @@
 *.pyc
 www/static/
 www/images/
-www/index.html
 www/menu/images/
 platforms/
 www/images
