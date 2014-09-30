@@ -2,8 +2,20 @@ import codecs
 import os
 import re
 import urllib
+import xml.etree.ElementTree as ET
+
 from tempfile import mkstemp
 from shutil import move
+
+def projectName(): 
+  ET.parse('config.xml').find("{http://www.w3.org/ns/widgets}name").text
+
+def languages():
+  try:
+    return ET.parse('config.xml').find("{http://www.w3.org/ns/widgets}preference[@name='i18nLanguages']").attrib['value'].split()
+  except:
+    print "Make sure you have a line like this in config.xml:  <preference name=\"i18nLanguages\" value=\"en es\" />"
+    raise
 
 def makeRelativeUrls():
   replace("./www/index.html", "/static", "static")
@@ -27,11 +39,15 @@ def replace(source_file_path, pattern, substring):
     move(target_file_path, source_file_path)
 
 def copyHtmlTemplate(sg_buildnumber=os.getenv('SG_BUILD_NUMBER', 'export_sg_buildnumber'), isAndroid=False):
-    path = './www/index_template_android.html' if isAndroid else './www/index_template_ios.html'
-    with codecs.open("./www/index.html", 'w', 'utf-8') as target_file:
-        with codecs.open(path, 'r', 'utf-8') as source_file:
-            for line in source_file:
-                target_file.write(line.replace('$SG_BUILD_NUMBER', sg_buildnumber))
+    print "Building for Languages %s" % languages()
+    for language in languages():
+      path = './www/index_template_android.html' if isAndroid else './www/index_template_ios.html'
+      outfile = "./www/index_%s.html" % language
+      with codecs.open(outfile, 'w', 'utf-8') as target_file:
+          with codecs.open(path, 'r', 'utf-8') as source_file:
+              for line in source_file:
+                  out_line = line.replace('$SG_BUILD_NUMBER', sg_buildnumber).replace('$LANGUAGE',language)
+                  target_file.write(out_line)
 
 
 def cacheImage(url,i, path='www'):
