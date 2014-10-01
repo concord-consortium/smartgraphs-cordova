@@ -188,3 +188,15 @@ After the opening `<body>` tag:
 Build the app using
 
     cordova build
+
+
+WIP: i18n Supporting other languages:
+=====================================
+
+1. Configure your languages in config.xml -- use standard 2 letter language codes. eg: `<preference name="i18nLanguages" value="en es" />`
+2. Running `./build_ios.sh` will now create multiple index_*.html files, one for each language.
+The old `index.html` file has been replaced by a simple static file with JS which redirects to the correct localized file.
+3. You still have to (for now) tweak things in IOS: 
+    1. Read this [article](http://useyourloaf.com/blog/2010/12/15/localize-iphone-application-name.html) to get background info about i18n names in xcode
+    1. Create an infoPlist.strings file by selecting your project, and then → file → new → resource → string file.
+    1. Localize the file you just created by selecting it in the project file navigator, and then in the right side bar, click on the 'localize' button.
