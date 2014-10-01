@@ -19,5 +19,4 @@ cordova platform add ios
 ./install_plugins.sh
 cordova build ios
 
-./remove_unused_regions.py "./platforms/ios/$PROJECT_NAME"
 open "./platforms/ios/$PROJECT_NAME.xcodeproj"
