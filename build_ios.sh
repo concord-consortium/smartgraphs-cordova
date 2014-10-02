@@ -19,4 +19,12 @@ cordova platform add ios
 ./install_plugins.sh
 cordova build ios
 
+./localize.py 
+
 open "./platforms/ios/$PROJECT_NAME.xcodeproj"
+
+echo "You must now add InfoPlist.strings to your project using Xcode."
+echo "After you have added this file to 'Resources', you must click 'localize'"
+echo "in the file inspector pane (on the right) and set the files language to 'English'."  
+echo "Click additional languages in the file inspector, answering 'Keep File' if any messages pop up."  
+echo "Do this same localization procedure for the 'resources/splash/*.png'."
