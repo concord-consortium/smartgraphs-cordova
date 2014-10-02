@@ -3,12 +3,13 @@ import os
 import re
 import urllib
 import xml.etree.ElementTree as ET
-
+import errno
 from tempfile import mkstemp
 from shutil import move
 
 def projectName(): 
-  ET.parse('config.xml').find("{http://www.w3.org/ns/widgets}name").text
+  return ET.parse('config.xml').find("{http://www.w3.org/ns/widgets}name").text
+
 
 def languages():
   try:
@@ -17,8 +18,21 @@ def languages():
     print "Make sure you have a line like this in config.xml:  <preference name=\"i18nLanguages\" value=\"en es\" />"
     raise
 
+def mkdir_p(path):
+    try:
+        os.makedirs(path)
+    except OSError as exc: # Python >2.5
+        if exc.errno == errno.EEXIST and os.path.isdir(path):
+            pass
+        else: raise
+
+# NB: This changes files in place.
+# Rebuild SC after running this.
 def makeRelativeUrls():
   replace("./www/index.html", "/static", "static")
+  for language in languages():
+    source_index = "./www/index_%s.html" % language
+    replace(source_index, "/static", "static")
   for root, subs, files in os.walk("./www/static"):
     for f in files:
       if re.search('(.html)|(.css)', f):
