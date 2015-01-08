@@ -23,7 +23,7 @@
     <!-- /plugins -->
 
     <preference name="permissions"                value="none"/>
-
+    <preference name="i18nLanguages"              value="en es" />
     <preference name="orientation"                value="landscape" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->

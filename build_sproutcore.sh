@@ -17,7 +17,7 @@ rm -rf ./www/static
 # build SmartGraphs
 cd smartgraphs
 bundle install
-bundle exec sc-build smartgraphs -r --languages=en
+bundle exec sc-build smartgraphs -r
 
 # Copy the SmartGraphs runtime
 cd ..

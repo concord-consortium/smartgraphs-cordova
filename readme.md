@@ -92,6 +92,9 @@ iOS
 
     1. For the "iOS App Store" Use the "CC Apple Store Distrobution 2014" profile.
 
+    1. *NEW!* If you are using Xcode 6, it seems like you need to do some of this from the command line: like this
+    `xcodebuild -exportArchive -archivePath $XARCHIVE_PATH -exportPath $PROJ_NAME -exportFormat ipa -exportProvisioningProfile “$PVSNPROFILE_NAM”`
+
 
 Android
 -------
@@ -188,3 +191,24 @@ After the opening `<body>` tag:
 Build the app using
 
     cordova build
+
+
+WIP: i18n Supporting other languages:
+=====================================
+
+1. Configure your languages in config.xml -- use standard 2 letter language codes. eg: `<preference name="i18nLanguages" value="en es" />`
+2. Running `./build_ios.sh` will now create multiple index_*.html files, one for each language.
+    The old `index.html` file has been replaced by a simple static file with JS which redirects to the correct localized file. 
+3. You still have to (for now) tweak things in Xcode: 
+    1. Read this [article](http://useyourloaf.com/blog/2010/12/15/localize-iphone-application-name.html) for background info about how resources are generally localized in xcode
+    1. `./build_ios.sh` created some localization files in the platforms/ios folder, but you need to still 'add them' to the project, and 'localize' them using xcode.
+    1. Select the `Resources` folder in xcode and then choose "File → Add Files to <porojectname>" from the xcode menu. Browse to find the file named `InfoPlist.strings` in the Resources fold on the filesystem.
+    1. Select `InfoPlist.strings` from the file browser in xcode's left hand side, and then click 'localize' in the file info panel on the right hand side.  Choose "English" as the language of the file, and lick "localize".
+    1. In the checkbox in the file info panel on the left select click on "spansih" (or anyother locales for which you have InfoPlist stings in ./res/). An alert should pop up saying that the "File already Exists".  The `./localize.py` script moved these files for us. Just click the button "Use File".
+    1. Find the splash screens in the Xcode file browser, in "Resources/spash".
+    1. For the landscape ipad resources, select them in the left file browser, and click the 'localize' button in the right side file info panel. Follow the same steps as above:  Select english, check off the boxes for the locales you have screens for, and choose "Use File".
+    1. Save your project and quit Xcode. This is crazy, but localization changes don't seem to appear unless xcode is restarted. :(
+    1. Start xcode, and clean the project: "Product → clean". This is also crazy, but if you don't do this, you will get build errors.
+    1. Run in the emulator.
+    
+

@@ -1,7 +1,6 @@
 .DS_Store
 *.pyc
 platforms/
-www/index.html
 www/images
 www/menu/index.html
 www/menu/images
