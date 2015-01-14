@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:cdv = "http://cordova.apache.org/ns/1.0"
-        id        = "org.concord.smartgraphs.algebra"
-        version   = "1.0.1">
+        id        = "org.concord.graphliteracy"
+        version   = "0.0.1">
 
-    <name>Algebra</name>
+    <name>Graph Literacy</name>
 
     <description>
-        Graphing activities to explore science and math topics
+        Graph literacy is the ability to identify the important features of a wide variety of graphs and relate those features to the context of the graphs—in other words, to increase students' understanding of the meaning of graphs. Graph literacy is emphasized in both the Common Core State Standards for Mathematics and the Next Generation Science Standards. 
     </description>
 
-    <author href="http://concord.org/projects/smartgraphs" email="smartgraphs@concord.org">
+    <author href="http://concord.org/projects/graph-literacy" email="smartgraphs@concord.org">
         The Concord Consortium Team
     </author>
 
