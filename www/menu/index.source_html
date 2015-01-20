@@ -53,13 +53,13 @@ li {
     height: auto;
     min-height: 100px;
     opacity: .95;
-    padding: 14px 0;
+    padding: 12.66666666666667px 0;
     }
   li img {
     background: #bddfdf;
     float: left;
     height: 95px;
-    margin: 0 1em;
+    margin: .15em 1em;
     width: 95px;
     }
   li strong { font-weight: bold; }
