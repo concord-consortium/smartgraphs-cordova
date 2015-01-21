@@ -43,8 +43,9 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#ECECEC" />
 
-    <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="8000" />
+    <!-- Requires plugin org.apache.cordova.splashscreen -->
+    <!-- Also because of a bug, manually call navigator.splashscreen.hide() -->
+    <preference name="AutoHideSplashScreen" value="false" />
 
     <access origin="*" />
 </widget>

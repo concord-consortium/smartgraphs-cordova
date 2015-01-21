@@ -26,16 +26,18 @@ initialize: function() {
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-onDeviceReady: function() {
-    StatusBar.styleDefault();
-    // StatusBar.backgroundColorByHexString("#04788c");
-    // Here we create a new object which will clobber the Google Analytics
-    // array, _gaq, with our plugin wrapper, so that all calls to _gaq.push
-    // will use the plugin code instead.
-    window._gaq = new GAPluginWrapper("UA-6899787-41");
-    
-    _gaq.push(["_trackEvent", "SmartGraphs Activities", "Opened menu page", null]);
-}
+    onDeviceReady: function() {
+        StatusBar.styleDefault();
+        // StatusBar.backgroundColorByHexString("#04788c");
+        // Here we create a new object which will clobber the Google Analytics
+        // array, _gaq, with our plugin wrapper, so that all calls to _gaq.push
+        // will use the plugin code instead.
+        window._gaq = new GAPluginWrapper("UA-6899787-41");
+        _gaq.push(["_trackEvent", "SmartGraphs Activities", "Opened menu page", null]);
+        setTimeout(function() {
+            navigator.splashscreen.hide();
+        }, 3500);
+    }
 };
 
 var GAPluginWrapper = function(trackingId) {
