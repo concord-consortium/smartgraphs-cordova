@@ -68,7 +68,7 @@ def cacheImage(url,i, path='www'):
    cacheDir = os.path.join(path,'images')
    if not os.path.exists(cacheDir):
        os.makedirs(cacheDir)
-   regex = re.compile('[^\.]\.(gif|jpg|png|svg)', re.IGNORECASE)
+   regex = re.compile('[^\.]\.(gif|jpg|png|svg|mp3|ogg)', re.IGNORECASE)
    match = regex.search(url)
    if match:
        extension = match.group(match.lastindex)
@@ -94,7 +94,7 @@ def replaceRemoteImages(path, start_count=0, imageBaseDir=None):
     image_count = start_count
     if imageBaseDir is None:
       imageBaseDir  = path
-    image_regex = "(https?:\/\/[^'\"]+\.(?:gif|jpg|png|svg))"
+    image_regex = "(https?:\/\/[^'\"]+\.(?:gif|jpg|png|svg|mp3|ogg))"
     regex = re.compile(image_regex,re.IGNORECASE | re.MULTILINE)
     for root, subs, files in os.walk(path):
         for f in files:
