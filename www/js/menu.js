@@ -18,37 +18,36 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-
+initialize: function() {
+    document.addEventListener('deviceready', this.onDeviceReady, false);
+},
+    
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        StatusBar.styleDefault();
-        StatusBar.backgroundColorByHexString("#04788c");
-
-        // Here we create a new object which will clobber the Google Analytics
-        // array, _gaq, with our plugin wrapper, so that all calls to _gaq.push
-        // will use the plugin code instead.
-        window._gaq = new GAPluginWrapper("UA-6899787-41");
-
-        _gaq.push(["_trackEvent", "SmartGraphs Activities", "Opened menu page", null]);
-    }
+onDeviceReady: function() {
+    StatusBar.styleDefault();
+    // StatusBar.backgroundColorByHexString("#04788c");
+    // Here we create a new object which will clobber the Google Analytics
+    // array, _gaq, with our plugin wrapper, so that all calls to _gaq.push
+    // will use the plugin code instead.
+    window._gaq = new GAPluginWrapper("UA-6899787-41");
+    
+    _gaq.push(["_trackEvent", "SmartGraphs Activities", "Opened menu page", null]);
+}
 };
 
 var GAPluginWrapper = function(trackingId) {
     this.gaPlugin = window.plugins.gaPlugin;
     this.gaPlugin.init(null, null, trackingId, 10);
-}
+};
 
 // The only event SmartGraphs sends is in the form
 // _gaq.push(["_trackEvent", "SmartGraphs Activities", key, value]);
 GAPluginWrapper.prototype.push = function(arr) {
     var key   = arr[2],
-        value = arr[3];
-
+    value = arr[3];
     this.gaPlugin.trackEvent(null, null, "Event", key, value);
-}
+};
+app.initialize();
