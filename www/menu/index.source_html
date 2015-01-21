@@ -76,7 +76,7 @@ When is one graph the same as another, even if it doesn&rsquo;t look the same? C
 On a warm summer evening, can a cricket and a little math tell the temperature? </a></li>
 
 <li style="background: #f7ab1b;"><a style="color: #fff;"  href="http://smartgraphs-authoring.concord.org/activities/266-gl-1-4-independent-and-dependent/student_preview" title="Independent and Dependent Variables Activity"><strong><img src="independent-dependent-variables.jpg" alt="Independent and Dependent Variables">Independent and Dependent Variables</strong><br>
-You&rsquo;ve done the experiment, you have the data, and now you need to make the graph.Which variable goes on the x-axis and which one goes on the y-axes?</a></li>
+You&rsquo;ve done the experiment, you have the data, and now you need to make the graph. Which variable goes on the x-axis and which one goes on the y-axes?</a></li>
 
 <li style="background: #378482;"><a style="color: #fff;" href="http://smartgraphs-authoring.concord.org/activities/249-gl-2-1-graphs-tell-a/student_preview" title="Graphs Tell a Story Activity"><strong><img src="graphs-tell-story.jpg" alt="Graphs Tell a Story">Graphs Tell a Story</strong><br>
 Can you read a graph like it was a story? Can you hear a story and make a graph that tells it?</a></li>
@@ -88,7 +88,7 @@ Can comparing data from several graphs tell the story about why Hurricane Katrin
 How do you know your average growth rate? What does a &quot;growth spurt&quot; look like on a graph?</a></li>
 
 </ol>
-  <script type="text/javascript" src="../cordova.js"></script>
-  <script type="text/javascript" src="../js/menu.js"></script>
+<script type="text/javascript" src="../cordova.js"></script>
+<script type="text/javascript" src="../js/menu.js"></script>
 </body>
 </html>
