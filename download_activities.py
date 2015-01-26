@@ -50,6 +50,11 @@ if os.path.exists(menu_in_file):
         json_url     = "%s.json" %(url.strip())
         json_source  = urllib2.urlopen(json_url)
         json_data    = unicode(json_source.read(),'utf-8')
+
+        json_data = re.sub("click","tap", json_data)
+        json_data = re.sub("Click","Tap", json_data)
+        
+        #
         activity_data= json.loads(json_data)
         ori_act_name = re.sub("\.df[0-9]+","",activity_data[u"_id"])
         act_name     = re.sub(",","",ori_act_name)
