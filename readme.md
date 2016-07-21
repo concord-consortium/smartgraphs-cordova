@@ -79,14 +79,14 @@ iOS
 1. Click the Play button to send the app to the device.
 
 1. To create an IPA for TestFlight or the iTunes store:
-  
+
     1. Make sure your IOS Device is connected, and chosen in the devlice pulldown at the top left.
 
     1. Select menu → "Product" → "Archive".
 
     1. The first item on the archives screen displayed next is the most recent archive.
 
-    1. Click on "Distribute". 
+    1. Click on "Distribute".
 
     1. For Test Flight, select "Save for Enterprise and Ad Hock Deployment" – sign with the Concord Provisioning profile.
 
@@ -124,7 +124,7 @@ sign the final APK.
     key.store=/Users/npaessel/lab/javascript/sg-cordova/noah-test-key.keystore
     key.alias=mykey
     ```
-3. Run the build: `cordova build andoid --release`
+3. Run the build: `cordova build android --release`
 
 
 Building a SmartGraphs project and adding it to the app
@@ -135,11 +135,11 @@ is already checked out and is buildable:
 
 Remove all activities but the one(s) you want to deploy from Smartgraphs/apps/smartgraphs/activity_json.
 
-(Optional -- if you have html file in www/menu/index.source_html that has links to SmartGraphs 
-activites on the SmartGraphs authoring server, you can run  `./download_activities.py`, 
+(Optional -- if you have html file in www/menu/index.source_html that has links to SmartGraphs
+activites on the SmartGraphs authoring server, you can run  `./download_activities.py`,
 which will create new files in Smartgraphs/apps/smartgraphs/activity_json/*.js for you)
 
-(Optional -- you can try running `./build_sproutcore.sh` which will attempt to clean, build, 
+(Optional -- you can try running `./build_sproutcore.sh` which will attempt to clean, build,
 and copy SmartGraphs for you, assuming there is a symlink in `./smartgraphs` )
 
 Build SG
@@ -198,8 +198,8 @@ WIP: i18n Supporting other languages:
 
 1. Configure your languages in config.xml -- use standard 2 letter language codes. eg: `<preference name="i18nLanguages" value="en es" />`
 2. Running `./build_ios.sh` will now create multiple index_*.html files, one for each language.
-    The old `index.html` file has been replaced by a simple static file with JS which redirects to the correct localized file. 
-3. You still have to (for now) tweak things in Xcode: 
+    The old `index.html` file has been replaced by a simple static file with JS which redirects to the correct localized file.
+3. You still have to (for now) tweak things in Xcode:
     1. Read this [article](http://useyourloaf.com/blog/2010/12/15/localize-iphone-application-name.html) for background info about how resources are generally localized in xcode
     1. `./build_ios.sh` created some localization files in the platforms/ios folder, but you need to still 'add them' to the project, and 'localize' them using xcode.
     1. Select the `Resources` folder in xcode and then choose "File → Add Files to <porojectname>" from the xcode menu. Browse to find the file named `InfoPlist.strings` in the Resources fold on the filesystem.
@@ -210,5 +210,3 @@ WIP: i18n Supporting other languages:
     1. Save your project and quit Xcode. This is crazy, but localization changes don't seem to appear unless xcode is restarted. :(
     1. Start xcode, and clean the project: "Product → clean". This is also crazy, but if you don't do this, you will get build errors.
     1. Run in the emulator.
-    
-
