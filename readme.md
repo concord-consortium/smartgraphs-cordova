@@ -210,3 +210,18 @@ WIP: i18n Supporting other languages:
     1. Save your project and quit Xcode. This is crazy, but localization changes don't seem to appear unless xcode is restarted. :(
     1. Start xcode, and clean the project: "Product → clean". This is also crazy, but if you don't do this, you will get build errors.
     1. Run in the emulator.
+
+
+Building a static website
+===============================================
+This is a work in progress.  It assumes there is a running SmartGraphs server running at
+http://smartgraphs-authoring.concord.org/.  It will fetch the activity data as JSON,
+and then slurp down the HTML for those activities, building an `index.html` file too.
+It will also cache remote images.  You may need to also copy sprout-core and SmartGraphs builds into static-website.
+(Only if there has been a change to the runtime).
+
+
+1. run `static-website.py`
+2. cleanup the formatting of `static-website/index.html`
+3. optional, check and ensure that `static-website/activities/` is a symlink to `static-website`
+4. check in any changes to the contents of `static-website`
